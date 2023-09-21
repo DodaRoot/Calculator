@@ -1,23 +1,34 @@
 // Linking the DOM
-let clear = document.getElementById('Clear')
-let state = document.getElementById('State')
-let percent = document.getElementById('Percentage')
-let divide = document.getElementById('Divide')
-let times = document.getElementById('*')
-let minus = document.getElementById('-')
-let plus = document.getElementById('+')
-let equal = document.getElementById('=')
-let zero = document.getElementById('0')
-let one = document.getElementById('1')
-let two = document.getElementById('2')
-let three = document.getElementById('3')
-let four = document.getElementById('4')
-let five = document.getElementById('5')
-let six = document.getElementById('6')
-let seven = document.getElementById('7')
-let eight = document.getElementById('8')
-let nine = document.getElementById('9')
+let placeHolder = document.querySelector('.screen')
+
 
 // Global Variables
+let operation = 0;
+let inputOne = [];
+let inputTwo = [];
+let operator = [];
+let output = 0;
 
 // Logic Function
+
+function one () {
+    if (operation == 0) {
+        if (inputOne <= 999999999999) {
+            inputOne += 1
+            placeHolder.innerHTML = `${inputOne} ${operator} ${inputTwo}`
+        }
+        
+    }
+    else if (operation == 1) {
+        if (inputTwo <= 999999999999) {
+            inputTwo += 1
+            placeHolder.innerHTML = `${inputOne} ${operator} ${inputTwo}`
+        }
+    }
+}
+
+function plus () {
+    operator = '+'
+    placeHolder.innerHTML = `${inputOne} ${operator} ${inputTwo}`
+    operation == 1
+}
