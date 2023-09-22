@@ -202,6 +202,25 @@ function zero () {
     }
 }
 
+function dot () {
+    inputOne = [];
+    inputTwo = [];
+    if (operation == 0) {
+        if (formula.length <= 5) {
+            inputOne += '.'
+            formula += inputOne
+            logic()
+        } 
+    }
+    else if (operation == 1) {
+        if (formula.length <= 11) {
+            inputTwo += '.'
+            formula += inputTwo
+            logic()
+        }
+    }
+}
+
 function plus () {
     if (operation == 0) {
     operator = '+'
@@ -253,14 +272,15 @@ function equal () {
     if (operator == '+') {
         output = formula.replace('+', ',')
         let value = output.split(',')
-        let valueOne = parseInt(value[0])
-        let valueTwo = parseInt(value[1])
+        let valueOne = parseFloat(value[0])
+        let valueTwo = parseFloat(value[1])
         output = valueOne + valueTwo
-        console.log(output)
         placeHolder.innerHTML = output
+        formula = '';
+        formula += output.toString()
         valueOne = 0
         valueTwo = 0
-        operation = 2
+        operation = 0
     }
     else if (operator == '-') {
         output = formula.replace('-', ',')
@@ -270,9 +290,11 @@ function equal () {
         output = valueOne - valueTwo
         console.log(output)
         placeHolder.innerHTML = output
+        formula = '';
+        formula += output.toString()
         valueOne = 0
         valueTwo = 0
-        operation = 2
+        operation = 0
     }
     else if (operator == '*') {
         output = formula.replace('*', ',')
@@ -282,9 +304,11 @@ function equal () {
         output = valueOne * valueTwo
         console.log(output)
         placeHolder.innerHTML = output
+        formula = '';
+        formula += output.toString()
         valueOne = 0
         valueTwo = 0
-        operation = 2
+        operation = 0
     }
     else if (operator == '/') {
         output = formula.replace('/', ',')
@@ -294,9 +318,11 @@ function equal () {
         output = valueOne / valueTwo
         console.log(output)
         placeHolder.innerHTML = output
+        formula = '';
+        formula += output.toString()
         valueOne = 0
         valueTwo = 0
-        operation = 2
+        operation = 0
     }
 }
 
