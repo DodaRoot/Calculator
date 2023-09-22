@@ -47,3 +47,29 @@ button {
 	cursor: pointer;
 	outline: inherit;
 }
+
+@media only screen and (max-width: 400px) {
+    body {
+      background-color: lightblue;
+    }
+    .container {
+        align-items: center;
+        justify-content: center;
+        border: 2px solid black;
+        width: 600px;
+        height: fit-content;
+        margin-top: 0%;
+        padding: 10px;
+        background-color: black;
+    }
+    .num {
+        border: 2px solid black;
+        border-radius: 11px;
+        padding: 5px;
+        margin: 5px;
+        font-size: 50px;
+        flex: 1;
+        text-align: center;
+        background-color: aliceblue;
+    }
+  }
