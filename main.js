@@ -248,6 +248,34 @@ function times() {
     }
 }
 
+function change() {
+    if (operation == 0) {
+        if (formula == 0) {
+            console.log('Not Valid')
+        }
+        formula -= formula*2
+        logic()  
+    }
+    else if (operation == 1) {
+        formula = 'Cant do that'
+        logic()
+    }
+}
+
+function percent() {
+    if (operation == 0) {
+        if (formula == 0) {
+            console.log('Not Valid')
+        }
+        formula = formula/100
+        logic()  
+    }
+    else if (operation == 1) {
+        formula = 'Cant do that'
+        logic()
+    }
+}
+
 function devide() {
     if (operation == 0) {
         operator = '/'
