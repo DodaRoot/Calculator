@@ -6,6 +6,7 @@ body {
 
 .container {
     border: 2px solid black;
+    border-radius: 20px;
     width: 600px;
     height: fit-content;
     margin-top: 5%;
@@ -15,10 +16,12 @@ body {
 
 .screen {
     border: 2px solid black;
-    padding: 40px 8px 0px 0px;
+    border-radius: 20px;
+    padding: 30px 8px 0px 0px;
     font-size: 80px;
     text-align: end;
-    background-color: rgb(30, 30, 255);
+    background-color: rgb(0, 0, 255);
+    color: rgb(0, 255, 0);
 }
 
 .row-one {
@@ -28,13 +31,19 @@ body {
 
 .num {
     border: 2px solid black;
-    border-radius: 11px;
+    border-radius: 25px;
     padding: 5px;
     margin: 5px;
     font-size: 80px;
     flex: 1;
     text-align: center;
     background-color: aliceblue;
+}
+
+.num:hover {
+    border-color: aliceblue;
+    background-color: black;
+    color: white;
 }
 
 button {
