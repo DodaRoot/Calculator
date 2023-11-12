@@ -1,53 +1,36 @@
 body {
+    margin: 0;
+    padding: 0;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
-
 .container {
-    border: 2px solid black;
-    border-radius: 20px;
-    width: 600px;
-    height: fit-content;
-    margin-top: 5%;
-    padding: 10px;
-    background-color: black;
+    margin-top: 10%;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 35px;
+    background-color: rgb(51, 47, 47);
+    width: 340px;
+    flex: 0 1 auto;
 }
-
-.screen {
-    border: 2px solid black;
-    border-radius: 20px;
-    padding: 30px 8px 0px 0px;
-    font-size: 80px;
-    text-align: end;
-    background-color: rgb(0, 0, 255);
-    color: rgb(0, 255, 0);
-}
-
-.row-one {
-    padding: 5px 0px 2px  0px;
-    display: flex;
-}
-
-.num {
-    border: 2px solid black;
-    border-radius: 25px;
-    padding: 5px;
+.display {
     margin: 5px;
-    font-size: 80px;
+    height: 90px;
+    padding: 15px 20px 0px 0px;
+    text-align: end;
+    font-size: 60px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
     flex: 1;
-    text-align: center;
-    background-color: aliceblue;
+    flex-wrap: wrap;
 }
-
-.num:hover {
-    border-color: aliceblue;
-    background-color: black;
-    color: white;
+.numbers {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
 }
-
 button {
-    width: fit-content;
     background: none;
 	color: inherit;
 	border: none;
@@ -56,29 +39,12 @@ button {
 	cursor: pointer;
 	outline: inherit;
 }
-
-@media only screen and (max-width: 400px) {
-    body {
-      background-color: lightblue;
-    }
-    .container {
-        align-items: center;
-        justify-content: center;
-        border: 2px solid black;
-        width: 600px;
-        height: fit-content;
-        margin-top: 0%;
-        padding: 10px;
-        background-color: black;
-    }
-    .num {
-        border: 2px solid black;
-        border-radius: 11px;
-        padding: 5px;
-        margin: 5px;
-        font-size: 50px;
-        flex: 1;
-        text-align: center;
-        background-color: aliceblue;
-    }
-  }
+#btn {
+    margin: 5px;
+    width: 60px;
+    height: 60px;
+    flex: 1;
+    font-size: 30px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+}
