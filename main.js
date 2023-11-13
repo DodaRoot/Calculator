@@ -18,9 +18,10 @@ btn.forEach((item) => {
             log(item.value) 
         }
         let font = display.innerText.length
-        font > 9 ? display.style.fontSize = '50px' : false ;
-        font > 11 ? display.style.fontSize = '40px' : false ;
-        font > 15 ? display.style.fontSize = '30px' : false ;
+        font > 9 ? display.style.fontSize = '48px' : false ;
+        font > 11 ? display.style.fontSize = '38px' : false ;
+        font > 14 ? display.style.fontSize = '28px' : false ;
+        font > 17 ? display.style.fontSize = '26px' : false ;
     })
 })
 
