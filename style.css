@@ -22,8 +22,8 @@ body {
     font-size: 60px;
     font-weight: 500;
     color: rgb(255, 255, 255);
-    flex: 1;
-    flex-wrap: wrap;
+    flex: 3;
+    flex-flow: row wrap;
 }
 .numbers {
     display: flex;
@@ -47,4 +47,9 @@ button {
     font-size: 30px;
     font-weight: 500;
     color: rgb(255, 255, 255);
+    transition: all 0.1s;
+}
+#btn:hover {
+    color: rgb(0, 255, 42);
+    font-size: 40px;
 }
