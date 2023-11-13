@@ -9,6 +9,7 @@ btn.forEach((item) => {
     item.addEventListener('click', () => {
         ['+', '-', '*', '/'].includes(item.value) ? bool = true : bool = false;
         if (op == -1) {
+            display.style.fontSize = '60px'
             display.innerText = '0'
             op++
         }
@@ -44,9 +45,21 @@ function log(val) {
 // The +, -, *, / opperations func()
 let output = 0
 function opperation() {
-    let formula = display.innerText.replace(/[*+-]/g, '?').replace('/', '?').split('?')
-    let first = parseFloat(formula[0])
-    let second = parseFloat(formula[1])
+    let formula = ''
+    form = display.innerText.replace(/[*+-]/g, '?').replace('/', '?').split('?')
+    let val2 = form[2]
+    if (neg == 1) {
+        formula = negDisplay.replace(/[*+-]/g, '?').replace('/', '?').split('?')
+    }
+    else if (neg == 2) {
+        negDisplay = `${negDisplay}${ref}${val2}`
+        formula = negDisplay.replace(/[*+-]/g, '?').replace('/', '?').split('?')
+    }
+    else {
+        formula = display.innerText.replace(/[*+-]/g, '?').replace('/', '?').split('?')
+    }
+    let first = parseFloat(formula[0].replace('!', '-').replace(/[()]/g, ''))
+    let second = parseFloat(formula[1].replace('!', '-').replace(/[()]/g, ''))
     switch (ref) {
         case '+':
             output = first + second
@@ -67,6 +80,7 @@ function opperation() {
     type = 0
     count1 = 0
     count2 = 0
+    neg = 0
 }
 
 // CE opperation func()
@@ -75,6 +89,9 @@ function clear() {
     display.innerText = '0'
     op = 0
     type = 0
+    count1 = 0
+    count2 = 0
+    neg = 0
 }
 
 // DEL opperation func()
@@ -104,5 +121,27 @@ function dot (val) {
     else {
         count2 == 0 ? display.innerText += val : false ;
         count2++
+    }
+}
+
+let negDisplay = ''
+let neg = 0
+function negation() {
+    form = display.innerText.replace(/[*+-]/g, '?').replace('/', '?').split('?')
+    console.log(form)
+    if (op < 2) {
+        let val = form[0]
+        let out = `(-${val})`
+        display.innerText = out
+        negDisplay = out.replace('-', '!')
+        neg = 2
+    }
+    else if (op == 2) {
+        let val1 = form[0]
+        let val2 = form[1]
+        let out = `${val1}${ref}(-${val2})`
+        display.innerText = out
+        negDisplay = out.replace('-', '!')
+        neg = 1
     }
 }
